@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using ToDoApp_I3B.Databaze;
@@ -33,6 +34,18 @@ namespace ToDoApp_I3B.Manage
         {
             _dbContext.Update(todo);
             _dbContext.SaveChanges();
+        }
+
+        public ToDo GetById(int id)
+        {
+            ToDo? todo = _dbContext.Find<ToDo>(id);
+            if(todo == null)
+            {
+                throw new Exception("Hledaný prvek není v DB");
+            }
+            return todo;
+
+            public IList<ToDo> GetAll() => _dbContext.ToDos.ToList();
         }
     }
 }

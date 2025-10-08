@@ -8,20 +8,13 @@ using System.Threading.Tasks;
 
 namespace ToDoApp_I3B.Model
 {
-    public class ToDo : INotifyPropretyChanged
+    public class ToDo : INotifyPropertyChanged
     {
         public int Id { get; set; }
         public string Title { get; set; }
         private bool _isDone;
 
         public ToDo() { }
-
-        public ToDo(int id, string title, bool isDone) :this()
-        {
-            Id = id;
-            Title = title;
-            _isDone = isDone;
-        }
 
         public bool IsDone
         {

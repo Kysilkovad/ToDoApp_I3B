@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoApp_I3B"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+		ResizeMode="NoResize"
+		Background="lightBlue"
+        Title="MainWindow" Height="300" Width="300">
     <Grid>
-
+		<ListBox x:Name="ToDoListBox"
+				 Width="280"
+				 Height="250"
+				 Background="Hotpink"
+				 Foreground="white">
+				 
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackTemplate Orientatation="Vertical">
+						<TextBlock Text="{Binding Path=Title}"/>
+						<CheckBox IsChecked="{Binding Path=IsDone}"/>
+					</StackTemplate>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+			
+			
     </Grid>
 </Window>

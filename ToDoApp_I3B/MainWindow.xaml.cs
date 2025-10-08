@@ -1,4 +1,4 @@
-﻿using System.Text;
+﻿ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,7 +20,7 @@ namespace ToDoApp_I3B
         private readonly ToDoManager _manager;
         public MainWindow()
         {
-            _manager = new ToDoManager(new Databaze ToDoDbContext());
+            _manager = new ToDoManager(new Databaze.ToDoDbContext());
             InitializeComponent();
         }
     }
